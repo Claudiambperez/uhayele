@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@layer theme, base, components;
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif; 
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .mx-6 {
+    margin-inline: calc(var(--spacing) * 6);
+  }
+  .bg-blue-500\/50 {
+    background-color: color-mix(in oklab, var(--color-blue-500) 50%, transparent);
+  }
+}
+
+
+.h1{
+  @apply  text-base lg:text-[60px] tracking-[-3px];
+}
+
+.h2{
+  @apply text-[32px];
+}
+
+.h4{
+  @apply text-[20px] ;
+}
+
+/* Global styles */
+:root {
+  --prim: #A866A9;
+  --sec: #B1A1C5;
+  --ter: #B1A1C5;
+  --quar: #6F459B;
+  --white: #fff;
+  --third: #102851;
+  --four: #5C6169;
+  --sex: #F1D886;
+}
+
+
+
+/* Responsive breakpoints */
+@media (max-width: 440px) {
+  .sm\:container {
+    max-width: 440px;
+    background-image: url('../../public/herobg6.jpg'),
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:container { 
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .xl\:container {
+    max-width: 1400px;
+    display: flex;
+  }
+}
+
+/* Font families */
+body {
+  font-family: 'Roboto', sans-serif; /* Default font */
+}
+
+.oswald {
+  font-family: 'Oswald', sans-serif; /* Oswald font */
+}
+
+/* Background images */
+.bg-pattern {
+  background-image: url('/pattern.png');
+}
+
+.bg-hero-bg {
+  background-image: url('/public/herobg.png');
+}
+
+.bg-img {
+  background-image: url('/public/hero.jpg');
+  background-size: cover; /* or 'contain' */
+  background-position: center;
+  height: 100vh; /* Set the height as needed */
+  width: 100%; /* Set the width as needed */
+}
+/* Utility classes for colors */
+.text-prim {
+  color: var(--prim);
+}
+
+.text-sec {
+  color: var(--sec);
+}
+
+.text-ter {
+  color: var(--ter);
+}
+
+.text-quar {
+  color: var(--quar);
+}
+
+.text-sex {
+  color: var(--sex);
+}
+
+
+.bg-prim {
+  background-color: var(--prim);
+}
+
+.bg-sec {
+  background-color: var(--sec);
+}
+
+.bg-ter {
+  background-color: var(--ter);
+}
+
+.bg-quar {
+  background-color: var(--quar);
+}
+
+.bg-sex {
+  background-color: var(--sex);
+}
+
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.active {
+  color: #A866A9;
+}
