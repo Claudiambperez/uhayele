@@ -1,6 +1,6 @@
 'use client'
-import { TiMinus, TiMinusOutline } from "react-icons/ti";
-//import React from 'react'
+import { TiMinus } from "react-icons/ti";
+import React, { useState } from 'react';
 import { useSwiper } from "swiper/react";
 //import {} 
 
@@ -14,16 +14,20 @@ const SwiperNavButtons = ({
     iconStyles: string;
 }
 ) => {
+     // State to manage hover status
+  const [isHovered, setIsHovered] = useState(false);
    const swiper = useSwiper();
   return (
     <div className={`${containerStyles}`} >
-    <button  className={`${btnStyles}`}  onClick={() => swiper.slideTo(0,200)}>
+    <button  className={`${btnStyles}`}  onClick={() => swiper.slideTo(0,200)}
+    >
+     
        <TiMinus className={`${iconStyles}`}  />
     </button>
-    <button  className={`${btnStyles}`}   onClick={() => swiper.slideTo(1,200)}>
+    <button  className={`${btnStyles}`}   onClick={() => swiper.slideTo(0,200)}>
        <TiMinus className={`${iconStyles}`} />
     </button>
-    <button  className={`${btnStyles}`}  onClick={() => swiper.slideTo(2,200)}>
+    <button  className={`${btnStyles}`}  onClick={() => swiper.slideTo(0,200)}>
        <TiMinus className={`${iconStyles}`}  />
     </button>
   

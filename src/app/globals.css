@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+@import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
 
 @layer theme, base, components;
 
@@ -21,7 +23,6 @@
   }
 }
 
-
 .h1{
   @apply  text-base lg:text-[60px] tracking-[-3px];
 }
@@ -34,6 +35,10 @@
   @apply text-[20px] ;
 }
 
+.h6{
+  @apply text-[16px] ;
+}
+
 /* Global styles */
 :root {
   --prim: #A866A9;
@@ -44,9 +49,40 @@
   --third: #102851;
   --four: #5C6169;
   --sex: #F1D886;
+  --fifth: #5c6169;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.147 0.004 49.25);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.147 0.004 49.25);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.147 0.004 49.25);
+  --primary: oklch(0.216 0.006 56.043);
+  --primary-foreground: oklch(0.985 0.001 106.423);
+  --secondary: oklch(0.97 0.001 106.424);
+  --secondary-foreground: oklch(0.216 0.006 56.043);
+  --muted: oklch(0.97 0.001 106.424);
+  --muted-foreground: oklch(0.553 0.013 58.071);
+  --accent: oklch(0.97 0.001 106.424);
+  --accent-foreground: oklch(0.216 0.006 56.043);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.923 0.003 48.717);
+  --input: oklch(0.923 0.003 48.717);
+  --ring: oklch(0.709 0.01 56.259);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0.001 106.423);
+  --sidebar-foreground: oklch(0.147 0.004 49.25);
+  --sidebar-primary: oklch(0.216 0.006 56.043);
+  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-accent: oklch(0.97 0.001 106.424);
+  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-border: oklch(0.923 0.003 48.717);
+  --sidebar-ring: oklch(0.709 0.01 56.259);
 }
-
-
 
 /* Responsive breakpoints */
 @media (max-width: 440px) {
@@ -100,6 +136,15 @@ body {
   height: 100vh; /* Set the height as needed */
   width: 100%; /* Set the width as needed */
 }
+
+.footer {
+  background: linear-gradient(
+    135deg,
+    var(--sec) 0%,
+    var(--white) 100%
+  );
+}
+
 /* Utility classes for colors */
 .text-prim {
   color: var(--prim);
@@ -121,6 +166,13 @@ body {
   color: var(--sex);
 }
 
+.text-fifth {
+  color: var(--fifth);
+}
+
+.text-four {
+  color: var(--four);
+}
 
 .bg-prim {
   background-color: var(--prim);
@@ -142,11 +194,209 @@ body {
   background-color: var(--sex);
 }
 
+.bg-third {
+  background-color: var(--third);
+}
 
 .bg-white {
   background-color: var(--white);
 }
 
+.border-ter {
+
+  border-color:  var(--ter);
+
+}
+
+.border-quar {
+  border-color:  var(--quar);
+}
+
 .active {
   color: #A866A9;
+}
+
+/*test*
+/* entire container, keeps perspective */
+.flip-container{
+/*perspective*/
+-webkit-perspective:1000;
+   -moz-perspective:1000;
+    -ms-perspective:1000;
+     -o-perspective:1000;
+        perspective:1000;
+}
+/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper{
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flipper{
+/*transition*/
+-webkit-transition:0.6s;
+   -moz-transition:0.6s;
+     -o-transition:0.6s;
+        transition:0.6s;
+/*transform-style*/
+-webkit-transform-style:preserve-3d;
+   -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+     -o-transform-style:preserve-3d;
+        transform-style:preserve-3d;
+position:relative;
+}
+/* hide back of pane during swap */
+.front, .back{
+/*backface-visibility*/
+-webkit-backface-visibility:hidden;
+   -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+     -o-backface-visibility:hidden;
+        backface-visibility:hidden;
+position:absolute;
+top:0;
+left:0;
+}
+/* front pane, placed above back */
+.front{
+z-index:2;
+}
+/* back, initially hidden pane */
+.back{
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+
+.card {
+    width: 176px; /* w-44 in pixels */
+    height: 224px; /* h-56 in pixels */
+    perspective: 1000px; /* Enable 3D perspective */
+    margin: 16px; /* Space around each card */
+
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; /* Enable 3D effect */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back face when not flipped */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Hide back face initially */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); /* Flip the card */
+}
+
+/*swiper pagination styles */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+   background-color: var(--ter);
+  }
+
+  /*Box shadow*/
+
+  .pannel-shadow {
+   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px opx;
+  }
+
+  @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+  .dark {
+  --background: oklch(0.147 0.004 49.25);
+  --foreground: oklch(0.985 0.001 106.423);
+  --card: oklch(0.216 0.006 56.043);
+  --card-foreground: oklch(0.985 0.001 106.423);
+  --popover: oklch(0.216 0.006 56.043);
+  --popover-foreground: oklch(0.985 0.001 106.423);
+  --primary: oklch(0.923 0.003 48.717);
+  --primary-foreground: oklch(0.216 0.006 56.043);
+  --secondary: oklch(0.268 0.007 34.298);
+  --secondary-foreground: oklch(0.985 0.001 106.423);
+  --muted: oklch(0.268 0.007 34.298);
+  --muted-foreground: oklch(0.709 0.01 56.259);
+  --accent: oklch(0.268 0.007 34.298);
+  --accent-foreground: oklch(0.985 0.001 106.423);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.553 0.013 58.071);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.216 0.006 56.043);
+  --sidebar-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-accent: oklch(0.268 0.007 34.298);
+  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.553 0.013 58.071);
+}
+
+  @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
