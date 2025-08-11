@@ -1,5 +1,5 @@
 //SECTION 
-import About from "./About"
+import About from "../About"
 import Classes from "./Classes"
 import Hero from "./Hero"
 import Teams from "./Teams"

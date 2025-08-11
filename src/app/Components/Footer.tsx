@@ -1,147 +1,111 @@
-'use client'
+//import React from 'react'
+
+
 import Image from "next/image"
 import Link from "next/link"
-import logo from '../../../public/rblogo.png'
-import { 
-  FaEnvelope, 
-  FaPhoneAlt, 
-  FaFacebook, 
-  FaTwitter, 
-  FaYoutube,
-} from "react-icons/fa"
+import { assets } from "../assets/images"
+import { footer_links, socialLinks } from "../../../constants"
 
-import CustomButton from "./CustomButton"
-import { RiUserCommunityLine } from "react-icons/ri"
-import { Link as ScrollLink } from "react-scroll"
-
-const footerLinks = [
- { name: 'home', target: 'home'},
- { name: 'about', target: 'about'},
- { name: 'class', target: 'class'},
- { name: 'team', target: 'team'},
- { name: 'testimonial', target: 'testimonial' },
-]
 
 const Footer = () => {
   return (
-    <footer className="pt-8 pb-4 footer"> {/* Reduced padding */}
-      <div className="container mx-auto max-w-7xl px-1 sm:px-6 lg:px-8">
-        <div className="text-four grid grid-cols-1 xl:grid-cols-4 gap-6 mb-2"> {/* Reduced gap */}
-          {/* Info */}
-          <div className="flex flex-col gap-4"> {/* Reduced gap */}
-           <Link href='#'>
-             <Image
-              src={logo}
-              width={117}
-              height={65}
-              alt="logo"
-             />
-           </Link>
-           <p className="max-w-sm text-fifth font-extrabold leading-snug">Uhayele - o ecossistema que prioriza sua saúde e bem-estar primeiro.</p>
-           <ul className="flex flex-col gap-2"> {/* Reduced gap */}
-            <Link className="flex items-center gap-2 text-fifth font-extrabold leading-snug" href='https://chat.whatsapp.com/BQWThupWvWJLxhTAwZYIQS'>
-              <RiUserCommunityLine className="text-2xl" /> {/* Reduced icon size */}
-              <span>Junte-se a Comunidade</span> 
-            </Link>
-            <Link className="flex items-center gap-2 text-fifth font-extrabold leading-snug" href=''>
-              <FaPhoneAlt className="text-lg" /> {/* Reduced icon size */}
-              <span>(244) 955-619-905</span> 
-            </Link>
-            <Link className="flex items-center gap-2 text-fifth font-extrabold leading-snug" href=''>
-              <FaEnvelope className="text-lg" /> {/* Reduced icon size */}
-              <span>uhayele@gmail.co.ao</span> 
-            </Link>
-           </ul>
-          </div>
-          {/* Blog */}
-          <div className="pt-2 flex flex-col gap-1"> {/* Reduced padding and gap */}
-            <h4 className="h4 text-quar mb-4">Publicações recentes</h4>
-            {/* Post */}
-            <div className="border-b border-dotted border-gray-400 flex flex-col gap-2 pb-2 mb-2"> {/* Reduced gap and padding */}
-              <Link className="cursor-pointer hover:text-purple-900 transition-all" href='https://www.news-medical.net/news/20250425/Telehealth-in-pediatric-primary-care-linked-to-responsible-antibiotic-use.aspx'>
-                <h5 className="text-sm leading-snug">Telessaúde na atenção primária pediátrica</h5>
-                <p className="text-gray-400 text-[12px] tracking-[3px] uppercase">April 25, 2025</p>
-              </Link>
-            </div>
-              {/*post*/}
-          <div className=" border-b border-dotted  border-gray-400 flex flex-col 
-          gap-2 pb-2 mb-2" >
-              <Link
-               className=" cursor-pointer  hover:text-purple-900  transition-all"
-               href='https://www.news-medical.net/news/20250409/Rural-hospitals-and-patients-are-disconnected-from-modern-care.aspx'  
-               >
-              <h5 className="text-sm leading-snug">
-               Os hospitais rurais estão desconectados da tecnologia
-              </h5>
-             <p className=" text-gray-400  text-[12px]  tracking-[3px] uppercase">April 9, 2025 </p>
-              </Link>
-          </div>
-           {/*post*/}
-          <div className=" flex flex-col 
-          gap-3 pb-3 mb-4" >
-              <Link
-               className=" cursor-pointer  hover:text-purple-900  transition-all"
-               href='https://www.news-medical.net/news/20250425/Telehealth-in-pediatric-primary-care-linked-to-responsible-antibiotic-use.aspx'  
-               >
-              <h5 className="text-sm leading-snug">
+    <footer className="flexCenter bg-gradient py-6 ">
+      <div className="padding-container max-container flex w-full flex-col gap-14">
+       <div className="flex  items-start justify-center gap-[10%] md:flex-row">
+    <Link href='/' className="mb-10 flex flex-col ">
+          <Image src={assets.logorb} alt="logo" width={74} height={29} />
+          <p className="max-w-[200px] medium-14 text-white leading-12">
+           Uhayele - o ecossistema que prioriza sua saúde e bem-estar primeiro.
+          </p>
+         </Link>
+          <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1 text-sex">
+      
                
+                {
+              footer_links.map((columns) => (
+                <FooterColumn title={columns.title} key={columns.title} >
+                  {columns.links ? (
+                    <ul className="regular-14 flex flex-col gap-4 text-white">
+                      {
+                        columns.links.map((link, index) => (
+                          <Link href={link.path} key={index}>
+                            {link.display}
+                          </Link>
+                        ))
+                      }
+                    </ul>
+                  ) : (
+                   <>
+              
+                     { columns.connect && (
+                          <div  className="flex flex-col gap-8 max-w-[400]" >
+                      
+                        <Link className="flex gap-2" href={columns.connect.path}>
+                         <span className="text-green-600 mt-[14px]  w-6 h-6"> {columns.connect.icon} </span>
+                        <p className="text-gray-600 medium-14">  {columns.connect.phrase} </p>
+                        </Link>
+                  
+                    
+                      <ul className="flex gap-8 text-gray-700 ">
+                         {socialLinks.map((social,index) => (
+                          <Link href={social.path} key={index} className="h-16 w-16">{social.icon} </Link>
+                         ))} 
+                      </ul>
+                       </div>
+                     )
 
-                Teledermoscopia oferece diagnóstico do cancro da pele
-              </h5>
-             <p className=" text-gray-400  text-[12px]  tracking-[3px] uppercase">November  14, 2024 </p>
-              </Link>
+                     }
+                           {columns.news && columns.news.length > 0  && (
+                       <ul className="regular-14 flex flex-col gap-2 text-white">
+                         {
+                            columns.news.map((newsItenm, index) => (
+                              //Apply to all excep the last index
+                          
+                             <li key={index} className={index === columns.news.length -1 ? 'leading-snug' : ' border-dotted border-b-1 border-gray-500'} >
+                               <Link href={newsItenm.path} className=" flex flex-col gap-2 ">
+                               <span className=" regular-14"> {newsItenm.title}</span>  <span className="text-gray-500"> ({newsItenm.year}) </span>
+                               </Link>
+                             </li>
+                        ))
+                         }
+                       </ul>
+                      
+                     )
+
+                     }
+                   </>
+                
+                  )}
+                </FooterColumn>
+              ))
+            }
+           
+          
           </div>
-          </div>
-          {/* Links */}
-          <div className="pt-2">
-            <h4 className="h4 text-quar leading-snug mb-4">Uhayele</h4>
-            <ul className="flex flex-col gap-4 transition-all duration-500">
-              {footerLinks.map((link, index) => (
-                <li key={index} className={`flex flex-col gap-2 pb-2 mb-1 text-sm text-fifth leading-snug uppercase font-extrabold ${index < footerLinks.length - 1 ? 'border-b border-dotted border-gray-500' : ''}`}>
-                  <ScrollLink
-                    to={link.target}
-                    smooth
-                    spy
-                    activeClass='active'
-                    className="cursor-pointer hover:text-prim transition-all"
-                    onClick={() => console.log(`Navigating to ${link.target}`)} // Debugging log
-                  >
-                    {link.name}
-                  </ScrollLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          {/* Newsletter */}
-          <div className="pt-2">
-            <h4 className="h4 text-quar leading-snug mb-4">Newsletter</h4>
-            <div className="flex flex-col gap-2">
-              <p className="text-justify">
-                Estamos empolgados em anunciar que em breve 
-                lançaremos nossa newsletter! Se deseja estar alerta e combater as doenças, não perca a oportunidade de se inscrever!
-              </p>
-              <form action="" className="flex  flex-col items-start gap-2">
-                <input
-                  type="text" 
-                  placeholder="Seu endereço de e-mail"
-                  className="h-[40px] bg-white outline-none px-4 rounded-md text-fifth" // Reduced height
-                />
-                <CustomButton containerStyles="h-[40px] rounded-md px-8" text="Enviar" /> {/* Reduced height */}
-              </form>
-            </div>
-          </div>
-        </div>
-        {/* Copyright */}
-        <div className="text-fifth border-t border-dotted">
-          <div className="container mx-auto h-full flex items-center justify-center pt-2">
-            <div>
+       </div>
+           {/* Copyright */}
+        <div className="text-fifth border-t border-dotted flex items-center justify-center mt-[-12px] relative">
+      
+           
               <span>&copy; Copyright 2024 CpDevelopment</span>
-            </div>
-          </div>
         </div>
       </div>
-    </footer>
+    </footer >
+
   )
 }
 
+type FooterColumnProps = {
+  title: string;
+  children: React.ReactNode;
+}
+
+const FooterColumn = ({ title, children} : FooterColumnProps) => {
+  return (
+      <div className="flex flex-col gap-5">
+        <h4 className="bold-18 whitespace-nowrap">{title} </h4>
+        {children}
+      </div>
+  )
+}
 export default Footer

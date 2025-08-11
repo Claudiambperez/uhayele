@@ -11,7 +11,7 @@ import { FaQuoteLeft } from "react-icons/fa"
 import { Swiper, SwiperSlide} from "swiper/react"
 
 //modules
-import  {Autoplay } from "swiper/modules" // Import Autoplay module
+import  {Autoplay, Pagination} from "swiper/modules" // Import Autoplay module
 
 //swiper styles
 import 'swiper/css'
@@ -63,14 +63,17 @@ const Testimonial = () => {
               <Swiper
                  slidesPerView={1}
                  spaceBetween={30}
-                 modules={[Autoplay]} // Add Autoplay module here
+                 modules={[Autoplay ,Pagination]} // Add Autoplay module here
                  autoplay={{
                    delay: 4500, // Delay between transitions in milliseconds
                    disableOnInteraction: false, // Autoplay will not be disabled after user interactions
                          }}
+                          pagination={{
+          dynamicBullets: true,
+        }}
                  breakpoints={{
                   768: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 30,
                   },
                   1024: {
@@ -78,6 +81,7 @@ const Testimonial = () => {
                     spaceBetween: 30,
                   }
                  }}
+                 className=" mt-10 grid gap-10  md:grid-cols-2 lg:mg-20 lg:gap-20"
                 >
                     {data.testimonialData.map((person, index) => {
                    return <SwiperSlide className=" h-full group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-4 transition-all duration-500 hover:border-indigo-600" key={index}> 

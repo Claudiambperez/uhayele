@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Oswald, Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "./Components/Header";
+//import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import AppContextProvider from "./context/AppContext";
 
 
 
@@ -30,12 +32,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className=" ">
+    <html lang="en" className="scroll-smooth ">
      
        <body  className={`${oswald.variable} ${roboto.variable}  w-full max-w-[1920px] mx-auto  bg-white `}>
-         <Header />
-          {children}
+     
+        <AppContextProvider>
+            <Navbar />
+         <main className="relative overflow-hidden">
+        {children}
+         </main> 
          <Footer/>  
+        </AppContextProvider>
+     
        </body>
    
     </html>

@@ -16,16 +16,16 @@ import {
   from '../Pages'
 
 const Routers = () => {
-  return <>
-   <Link path='/' element={<HomePage/>} />
-   <Link path='/home' element={<HomePage/>} />
-   <Link path='/services' element={<Services/>} />
-   <Link path='/doctors' element={<Doctors/>} />
-   <Link path='/doctors/:id' element={<DoctorDetails/>} />
-   <Link path='/contact' element={<Contact/>} />
-   <Link path='/login' element={<Login/>} />
-   <Link path='/register' element={<SignUp/>} />
-  </>
+  return <Routes>
+   <Route path='/' element={<HomePage/>} />
+   <Route path='/home' element={<HomePage/>} />
+   <Route path='/services' element={<Services/>} />
+   <Route path='/doctors' element={<Doctors/>} />
+   <Route path='/doctors/:id' element={<DoctorDetails/>} />
+   <Route path='/contact' element={<Contact/>} />
+   <Route path='/login' element={<Login/>} />
+   <Route path='/register' element={<SignUp/>} />
+  </Routes>
 }
 
 export default Routers

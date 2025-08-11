@@ -26,29 +26,47 @@ import person_5 from './p5.jpg'
 import person_6 from './p6.jpg'
 import person_7 from './p7.jpg'
 import person_8 from './p8.jpg'
-
-
+import menu from './menu.svg'
+import sthetoscope from './stethoscope.png'
+import blac_woman_uhayele from './blackwomanuhayele.png'
+import star from './star.svg'
+import fac_person_1 from'./person-1.png'
+import fac_person_2 from'./person-2.png'
+import quote from './quote.svg'
+import about from './draAdis.png'
+import doctor from './blackwoman.png'
+import gif from './Doctor.gif'
+import phone from './phone.png'
+import doctor_7 from './doc7.jpg'
+import faq from './faq.gif'
 
 //Objects
 export const assets = {
-    logo,
-    logorb,
-    medicalRecord,
-    i24_7,
-    labExam,
-    oncology,
-    diagnosis,
-    cardio,
-    oftamology,
-    hemathology,
-    generalPhysician,
+    about,
     bgHero,
+    blac_woman_uhayele,
+    cardio,
+    diagnosis,
+    doctor,
     doctor_1,
     doctor_2,
     doctor_3,
     doctor_4,
     doctor_5,
     doctor_6,
+    doctor_7,
+    fac_person_1,
+    fac_person_2,
+    faq,
+    generalPhysician,
+    gif,
+    hemathology,
+    i24_7,
+    labExam,
+    logo,
+    logorb,
+    medicalRecord,
+    menu, 
     person_1,
     person_2,
     person_3,
@@ -56,6 +74,11 @@ export const assets = {
     person_5,
     person_6,
     person_7,
-    person_8
-
+    person_8,
+    phone,
+    quote,
+    star,
+    sthetoscope,
+    oftamology,
+    oncology
 }
