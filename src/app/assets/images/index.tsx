@@ -39,10 +39,12 @@ import gif from './Doctor.gif'
 import phone from './phone.png'
 import doctor_7 from './doc7.jpg'
 import faq from './faq.gif'
+import avatar from './avatar-icon.png'
 
 //Objects
 export const assets = {
     about,
+    avatar,
     bgHero,
     blac_woman_uhayele,
     cardio,

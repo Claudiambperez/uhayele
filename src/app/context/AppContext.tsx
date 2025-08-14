@@ -5,6 +5,7 @@ import { doctors } from "../../../constants";
 // Define the type for your context value
 interface AppContextValue {
   doctors: typeof doctors;
+  currencySymbol: string;
 }
 
 export const AppContext = createContext<AppContextValue>({} as AppContextValue);
@@ -13,10 +14,11 @@ export const AppContext = createContext<AppContextValue>({} as AppContextValue);
 interface AppContextProviderProps {
   children: ReactNode;
 }
-
+const currencySymbol = 'AOA';
 const AppContextProvider: React.FC<AppContextProviderProps> = (props) => {
   const value: AppContextValue = {
-      doctors
+      doctors,
+      currencySymbol
   };
 
   return (

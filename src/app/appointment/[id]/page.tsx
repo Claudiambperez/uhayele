@@ -17,11 +17,15 @@ const page = () => {
    const doctorId = searchParams.get('id')
     const {id} = useParams()
    console.log("Doctor ID from params:", id); // Log the doctorId from params
-   const {doctors} = useContext(AppContext)
+   const {doctors, currencySymbol} = useContext(AppContext)
 
 
     const [doctorInfo, setDoctorInfo] = useState<DOCTOR | null>(null);
+    // State to manage the active tab
     const [tab, setTab] = useState('appointment');
+    const [docSlots, setDocSlots] = useState<string[]>([]);
+    const [slotIndex, setSlotIndex] = useState(0);
+    const [slotTime, setSlotTime] = useState<string | null>(null);
    
    const fetchDocInfo = async () => {
        console.log("Doctor ID:", doctorId); // Log the doctorId
@@ -31,10 +35,30 @@ const page = () => {
 
    }
 
+   const getAvailableSlots = async () => {
+       setDocSlots([]);
+       if (doctorInfo) {
+         //  const slots = doctorInfo.slots;
+           const currentTime = new Date();
+         /*  const availableSlots = slots.filter(slot => {
+               const slotDate = new Date(slot);
+               return slotDate > currentTime;
+           });
+           setDocSlots(availableSlots);
+           if (availableSlots.length > 0) {
+               setSlotTime(availableSlots[0]);
+           }*/
+       }   
+    }
+
    useEffect(() => {
        fetchDocInfo()
    }, [doctors,doctorId])
-
+ 
+  useEffect(() => {
+    getAvailableSlots();
+  }, [doctorInfo]);
+    
   return doctorInfo && (
     <div className='flex flex-col items-center justify-center h-[560px] '>
         {/*-------- Doctor Details -----------*/}
@@ -69,7 +93,7 @@ const page = () => {
                 </ul>
             <div className=' w-3/4 h-full rounded-md  overflow-y-auto'>
              {
-                tab === 'experience'  && <DoctorExperience experience={doctorInfo.experience}  degree={doctorInfo.degree} fees={doctorInfo.fees} totalPatients={doctorInfo.totalPatients} speciality = {doctorInfo.speciality} />
+                tab === 'experience'  && <DoctorExperience experience={doctorInfo.experience}  degree={doctorInfo.degree} fees={doctorInfo.fees} totalPatients={doctorInfo.totalPatients} speciality = {doctorInfo.speciality} currencySymbol ={currencySymbol} />
              }
              {
                 tab === 'appointment'  && <DoctorAppointment/>
