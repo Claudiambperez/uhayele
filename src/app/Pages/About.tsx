@@ -64,10 +64,10 @@ const About = () => {
                <h2 className="bold-32 text-sex leading-2 px-6"> Orgulhosos em inovar o atendimento hospitalar personalizado.  </h2>
                 <div className="py-2 flex gap-6 flex-col px-6">
                   <p  className=" bold-1 leading-8  text-gray-500 text-justify ">
-                   "Trabalharemos consigo para desenvolver planos de cuidados individualizados, 
+                   Trabalharemos consigo para desenvolver planos de cuidados individualizados, 
                 incluindo a gestão de doenças crónicas. Se não pudermos ajudar, podemos fornecer 
                 referências ou aconselhamento sobre o tipo de profissional de que necessita. Tratamos 
-                todos os pedidos de informação com sensibilidade e na mais estrita confidencialidade."
+                todos os pedidos de informação com sensibilidade e na mais estrita confidencialidade.
                </p>
                
                  <p  className=" bold-1 leading-8  text-gray-500 text-justify ">
