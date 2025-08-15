@@ -1,4 +1,4 @@
-import { dir } from "console"
+
 
 export const fadeIn = ( direction: string, delay : number) => {
    return {

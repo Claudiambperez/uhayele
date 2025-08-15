@@ -1,17 +1,17 @@
 import React from 'react'
-import { DOCTOR } from '../../../constants'
+
 import { GoInfo } from "react-icons/go";
 
 type DoctorExperienceProps = {
   experience: string; 
   degree: string;
   fees: number; 
-  totalPatients: number;
+  //totalPatients: number;
   speciality: string;
   currencySymbol: string;
 }
 
-const DoctorExperience = ({experience, degree, fees, totalPatients, speciality, currencySymbol}: DoctorExperienceProps) => {
+const DoctorExperience = ({experience, degree, fees,  speciality, currencySymbol}: DoctorExperienceProps) => {
   return (
     <div className=' bg-white rounded-lg shadow-md flex-1 sm:mx-0 '>
         <h1 className='text-white z-20 px-2 bg-sex py-2 medium-16 flex gap-2'>Sobre <span className=' py-[3px]'><GoInfo className='w-4.5 h-4.5' /> </span></h1>

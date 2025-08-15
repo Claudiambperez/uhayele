@@ -1,13 +1,11 @@
 'use client'
 
-import  { useState } from 'react'
+//import  { useState } from 'react'
 //DEPENDENCY
 import Image from 'next/image'
-import Link from 'next/link';
 //ICONS
 import { LiaLongArrowAltDownSolid } from "react-icons/lia";
-import { PiMinusBold } from "react-icons/pi";
-import { LuArrowDownFromLine } from "react-icons/lu";
+
 //ASSETS
 import { assets } from '../assets/images'
 //COMPONENTS

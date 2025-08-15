@@ -1,13 +1,13 @@
 'use client'
 
 //ANIMATION
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../lib/variants";
+//import { motion } from "framer-motion";
+//import { fadeIn } from "../../../lib/variants";
 
 //DATA
-import { data } from "@/app/assets/data";
+
 //ACHIEVEMENTS SECTION
-import Achievements from "./Home/Achievements";
+
 import { assets } from "@/app/assets/images";
 import Image from "next/image";
 import { FaCircle } from "react-icons/fa";
