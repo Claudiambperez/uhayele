@@ -27,6 +27,7 @@ const About = () => {
                  src={assets.gif}
                  alt='Dra Adis'  
                  className=" rounded-2xl w-[300px] h-[300px] "
+                 unoptimized
                  />
                   <div className=" absolute z-20 w-[200px]  top-60 md:w-[300px]  right-[-10%] md:right-[-7%]
                    lg:bottom-28 lg:right-[12%]  ">

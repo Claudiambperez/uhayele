@@ -2,7 +2,7 @@
 import React from 'react'
 import { assets } from '../assets/images'
 import Image, { StaticImageData } from 'next/image'
-import RotatingText from '@/hooks/RotatingText'
+
 import Button from '../Components/Button'
 import { AiFillPlayCircle } from "react-icons/ai";
 import { FiFileText } from "react-icons/fi";
@@ -20,6 +20,7 @@ import 'swiper/css/pagination'
 import Doctors from './Doctors/Doctors'
 import FaqList from './FAQs'
 import Link from 'next/link'
+import RotatingText from '@/hooks/RotatingText'
 
 type facilitiesProps = {
   backgroundImage: string | StaticImageData;
@@ -275,7 +276,7 @@ const TEST = () => {
   
                <div className='w-1/2  hidden md:block'>
                          <h2 className='bold-32 lg:bold-36 xl:max-w-[690px]'>Questões frequentes feitas pelos nossos adorados pacientes</h2>
-                <Image src={assets.faq} alt='' className='w-[260] h-[260] '/>
+                <Image src={assets.faq} alt='' className='w-[260] h-[260] ' unoptimized/>
               </div>
               <div className='w-full md:w-1/2'>
               <FaqList/>  
