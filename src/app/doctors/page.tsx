@@ -6,8 +6,8 @@ import { AppContext } from '../context/AppContext'
 import Image from 'next/image'
 import { DOCTOR, services } from '../../../constants'
 
-const DOCTORS = () => {
-  const router = useRouter()
+function FilterDoctors(){
+    const router = useRouter()
   const searchParams = useSearchParams()
   
   const [speciality, setSpeciality] = useState<string | null>(null);
@@ -34,11 +34,7 @@ const DOCTORS = () => {
   }, [doctors, speciality])
 
   return (
-    <>
-      
-    
-        <Suspense fallback={<p>Loading specialties...</p>}>
-        <div className=''>
+     <div className=''>
         <div className="max-w-sm space-y-3 px-6">
           <input type="text" className="py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm shadow-md text-neutral-400 " placeholder="Pesquise os médicos especialistas " />
         </div>
@@ -85,6 +81,18 @@ const DOCTORS = () => {
             </div>
           </div>
               </div>
+  )
+}
+
+const DOCTORS = () => {
+
+
+  return (
+    <>
+      
+    
+        <Suspense fallback={<p>Loading especialidades...</p>}>
+         <FilterDoctors />
         </Suspense> 
   
     </>
