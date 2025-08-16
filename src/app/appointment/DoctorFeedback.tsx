@@ -2,7 +2,8 @@ import Image from 'next/image';
 import React from 'react'
 import { FcFeedback } from 'react-icons/fc'
 import { assets } from '../assets/images';
-import { formatDate } from '../utils/formateDate';
+import { formatDate } from '../../../lib/utils';
+
 
 const DoctorFeedback = () => {
 /*  const [count, setCount] = React.useState(0);

@@ -4,7 +4,7 @@ import React from 'react'
 
 //ANIMATION
 import { motion } from "framer-motion"
-import { fadeIn } from "../../../../lib/variants"
+//import { fadeIn } from "../../../../lib/variants"
 
 //BUTTON
 import CustomButtonDark from '../../Components/CustomButtonDark'
@@ -56,7 +56,7 @@ const Teams: React.FC = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between  gap-16 items-center flex-col lg:flex-row md:mt-20">      
                 <motion.div
-                 variants={fadeIn('up', 0.4)}
+             //    variants={fadeIn('up', 0.4)}
                  initial = 'hidden'
                  whileInView = {'show'}
                    viewport={{ once: false, amount: 0.2 }}
@@ -96,7 +96,7 @@ const Teams: React.FC = () => {
                     </div>
                 </motion.div>
                     <motion.div
-                 variants={fadeIn('up', 0.8)}
+                // variants={fadeIn('up', 0.8)}
                  initial = 'hidden'
                  whileInView = {'show'}
                  viewport={{ once: false, amount: 0.2 }}
@@ -104,7 +104,7 @@ const Teams: React.FC = () => {
               >
                 
             <motion.h2
-                 variants={fadeIn('up', 0.6)}
+              //   variants={fadeIn('up', 0.6)}
                  initial = 'hidden'
                  whileInView = {'show'}
                  viewport={{ once: false, amount: 0.2 }}
@@ -112,7 +112,7 @@ const Teams: React.FC = () => {
                         A nossa equipa motivadora, forte e criativa
             </motion.h2>
             <motion.p 
-             variants={fadeIn('up', 0.4)}
+         //    variants={fadeIn('up', 0.4)}
                  initial = 'hidden'
                  whileInView = {'show'}
                  viewport={{ once: false, amount: 0.2 }}

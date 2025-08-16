@@ -2,7 +2,7 @@
 
 //ANIMATION
 import { motion } from "framer-motion"
-import { fadeIn } from "../../../../lib/variants"
+//import { fadeIn } from "../../../../lib/variants"
 
 //ICON
 import { FaQuoteLeft } from "react-icons/fa"
@@ -33,7 +33,7 @@ const Testimonial = () => {
        
         <div  className="w-full lg:w-2/5">
          <motion.p
-                 variants={fadeIn('up', 0.6)}
+                // variants={fadeIn('up', 0.6)}
                  initial = 'hidden'
                  whileInView = {'show'}
                  viewport={{ once: false, amount: 0.2 }}
@@ -41,7 +41,7 @@ const Testimonial = () => {
                   Testemunhos
             </motion.p>
             <motion.h2
-                 variants={fadeIn('up', 0.4)}
+              //   variants={fadeIn('up', 0.4)}
                  initial = 'hidden'
                  whileInView = {'show'}
                  viewport={{ once: false, amount: 0.2 }}
@@ -55,7 +55,7 @@ const Testimonial = () => {
                 
                     </div>
                       <motion.div
-                       variants={fadeIn('up', 0.8)}
+                    //   variants={fadeIn('up', 0.8)}
                  initial = 'hidden'
                  whileInView = {'show'}
                  viewport={{ once: false, amount: 0.2 }}
