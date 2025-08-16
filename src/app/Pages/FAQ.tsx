@@ -118,7 +118,7 @@ const TEST = () => {
     <Button
      type='button'
      title='Download App'
-     variant ='bg-ter text-white rounded-full h-12 w-full gap-2 hover:bg-ter-dark transition-all sm:w-38 sm:h-12 '
+     variant ='bg-[#B1A1C5] text-white rounded-full h-12 w-full gap-2  group hover:border-[#B1A1C5] hover:border hover:text-[#B1A1C5] hover:bg-white transition-all sm:w-38 sm:h-12 '
     />
     <Button
      type='button'
@@ -253,7 +253,7 @@ const TEST = () => {
                  <Button
                  type='button'
                  title='Saber mais'
-                 variant ='bg-sex text-white rounded-full h-12 w-full  gap-2 hover:bg-ter-dark transition-all sm:w-38 sm:h-12 '
+                 variant =' h-12 w-full  gap-2 transition-all sm:w-38 sm:h-12 bg-[#F1D886] text-white rounded-full  group-hover hover:border-[#F1D886] hover:border hover:bg-white hover:text-[#F1D886] transition-all '
                  />
                 </Link>
       </section>} 

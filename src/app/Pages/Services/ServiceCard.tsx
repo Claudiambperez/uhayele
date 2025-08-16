@@ -30,10 +30,10 @@ const ServiceCard = ({ speciality, desc, bgColor, textColor, icon: Icon }: Servi
             pathname: '/doctors',
             query: { speciality: speciality }
           }}
-          className="w-[36px] h-[36px] rounded-full border border-solid border-[#B1A1C5] 
-            mx-auto flex items-center justify-center group hover:bg-[#B1A1C5] hover:border-none"
+          className="w-[36px] h-[36px] rounded-full 
+            mx-auto flex items-center justify-center bg-[#B1A1C5]  text-white  group hover:border-[#B1A1C5] hover:border hover:bg-white  transition-all"
         >
-          <BsArrowRight className="group-hover:text-white w-6 h-5" />
+          <BsArrowRight className="group-hover:text-[#B1A1C5] w-6 h-5" />
         </Link>
       </div>
     </li>

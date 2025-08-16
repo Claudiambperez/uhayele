@@ -86,11 +86,8 @@ function FilterDoctors(){
 
 const DOCTORS = () => {
 
-
   return (
     <>
-      
-    
         <Suspense fallback={<p>Loading especialidades...</p>}>
          <FilterDoctors />
         </Suspense> 

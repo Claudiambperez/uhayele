@@ -16,9 +16,9 @@ const FaqItem = ({question, content} : FAQ) => {
     cursor-pointer'>
         <div className="flex items-center justify-between gap-5" onClick={toggleAccordion}>
           <h4 className=' text-[16px] leading-7 lg:text-[22px] lg:leading-8 text-sex'>{question} </h4>
-          <div className={`${isOpen && 'bg-[#F1D996] text-white border-none'} w-7 h-7 lg:w-8 lg:h-8 border border-solid border-[#F1D996] rounded
+          <div className={`${isOpen && ' border border-solid border-[#F1D996]     bg-white'} w-7 h-7 lg:w-8 lg:h-8 text-white bg-[#F1D996] rounded
           flex items-center justify-center  `}>
-         {isOpen ? <AiOutlineMinus/> : <AiOutlinePlus/>}
+         {isOpen ? <AiOutlineMinus className='text-black'/> : <AiOutlinePlus/>}
         </div>
         </div>
 

@@ -49,7 +49,7 @@ const Navbar = () => {
         {
             NAV_LINKS.map((link) => (
                 <Link href={link.href} key={link.key} className=' "regular-16
-                 flexCenter cursor-pointer pb-1.5 transition-all' >
+                 flexCenter cursor-pointer text-[#B1A1C5] pb-1.5 transition-all  opacity-85' >
                     {link.label}
                     <hr  className=" border-none outline-none  h-0.5 bg-black w-3/5 m-auto hidden "/>
                 </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
            type ="button"
            title="Login"
            icon={IoIosPerson}
-           variant=" cursor-pointer  text-ter transition-all h-8 w-28 gap-2  hover:text-black border-ter border-1 rounded-full"
+           variant=" cursor-pointer bg-[#B1A1C5] text-white transition-all h-8 w-28 gap-2  rounded-full group hover:border-[#B1A1C5] hover:border-1 hover:bg-white hover:text-[#B1A1C5]"
           />
         </Link>
       </div>
