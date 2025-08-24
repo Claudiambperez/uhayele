@@ -8,6 +8,8 @@ import { NAV_LINKS } from "../../../constants"
 import { IoIosPerson } from "react-icons/io";
 import Button from "./Button";
 import { useEffect, useRef } from "react";
+import { ModeToggle } from "@/components/ui/mode-toggle"
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"
 
 const Navbar = () => {
   const navRef = useRef<HTMLElement>(null);
@@ -37,11 +39,12 @@ const Navbar = () => {
   const handleMenuClick = () => menuRef.current?.classList.toggle("hidden");
 
   return (
-    <nav className=" flexBetween max-container   padding-container relative z-30 py-5 " ref={navRef} 
+    <header className=" dark:border-b  dark:border-gray-800   dark:bg-background/80  dark:backdrop-blur-md dark:supports-[backdrop-filter]:bg-background/60">
+       <nav className=" flexBetween max-container   padding-container relative h-16 px-4  py-5 " ref={navRef} 
      >
       {/* Logo */}  
       <Link href="/">
-        <Image src={assets.logorb}  alt="logo" width={74} height={29}/>
+        <Image src={assets.logorb}  alt="logo" width={80} height={29}/>
       </Link>
        {/* Menu */}  
       
@@ -58,9 +61,9 @@ const Navbar = () => {
         
       </ul>
        {/* NAV RIGHT */}  
-      <div className="hidden lg:flex lg:items-center lg:justify-center ">
-        <div className="hidden">
-           <Link href="/" >
+      <div className=" lg:flex lg:items-center lg:justify-center lg:gap-4 ">
+         {/* <div className="hidden">
+         <Link href="/" >
             <figure className="cursor-pointer">
               <Image
                 src={assets.person_2}
@@ -71,24 +74,45 @@ const Navbar = () => {
               />
               </figure> 
             </Link>
-        </div>
-        <Link href="/login">
+        </div>*/} 
+       
+      {/*  <Link href="/login">
           <Button 
            type ="button"
            title="Login"
            icon={IoIosPerson}
            variant=" cursor-pointer bg-[#B1A1C5] text-white transition-all h-8 w-28 gap-2  rounded-full group hover:border-[#B1A1C5] hover:border-1 hover:bg-white hover:text-[#B1A1C5]"
           />
-        </Link>
+        </Link>*/} 
+         <SignedOut>
+             
+               
+                <SignInButton>
+              <SignUpButton>
+                <Button 
+                  type="button"
+                  title="Sign Up"
+                  icon={IoIosPerson}
+                  variant="cursor-pointer bg-[#B1A1C5] text-white transition-all h-8 w-28 gap-2 rounded-full group hover:border-[#B1A1C5] hover:border-1 hover:bg-white hover:text-[#B1A1C5]"
+                />
+              </SignUpButton>
+                </SignInButton>
+                </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
       </div>
-          <Image
+         {/*<Image
         src={assets.menu}
         alt="menu"
         width={32}
         height={32}
         className="inline-block  cursor-pointer lg:hidden"
-        />
+        />*/} 
+        <ModeToggle />
     </nav>
+    </header>
+   
   )
 }
 

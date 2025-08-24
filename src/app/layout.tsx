@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
 import { Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 //import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import AppContextProvider from "./context/AppContext";
+import { ThemeProvider } from "next-themes";
+
 
 
 
@@ -32,18 +43,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth ">
+    <html lang="en" className="scroll-smooth " suppressHydrationWarning>
      
-       <body  className={`${oswald.variable} ${roboto.variable}  w-full max-w-[1920px] mx-auto  bg-white `}>
-     
+       <body  className={`${oswald.variable} ${roboto.variable} antialised   `}>
+        <ClerkProvider  
+         appearance={{
+        baseTheme: dark,
+      }}
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      >
         <AppContextProvider>
-            <Navbar />
+              <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+     
+   <Navbar />
          <main className="relative overflow-hidden">
         {children}
          </main> 
          <Footer/>  
+         
+          </ThemeProvider>
+         
         </AppContextProvider>
-     
+     </ClerkProvider>
        </body>
    
     </html>

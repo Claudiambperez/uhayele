@@ -380,3 +380,8 @@ export const socialLinks = [
 ]
 
  
+
+//AUTHENTICATION
+export type AuthProps = {
+  children: React.ReactNode;  
+}
