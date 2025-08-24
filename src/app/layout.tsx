@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 import { Oswald, Roboto } from "next/font/google";
