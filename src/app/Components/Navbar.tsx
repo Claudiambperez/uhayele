@@ -84,20 +84,16 @@ const Navbar = () => {
            variant=" cursor-pointer bg-[#B1A1C5] text-white transition-all h-8 w-28 gap-2  rounded-full group hover:border-[#B1A1C5] hover:border-1 hover:bg-white hover:text-[#B1A1C5]"
           />
         </Link>*/} 
-         <SignedOut>
-             
-               
-                <SignInButton>
+         
+
+             <SignedOut>
+              <SignInButton />
               <SignUpButton>
-                <Button 
-                  type="button"
-                  title="Sign Up"
-                  icon={IoIosPerson}
-                  variant="cursor-pointer bg-[#B1A1C5] text-white transition-all h-8 w-28 gap-2 rounded-full group hover:border-[#B1A1C5] hover:border-1 hover:bg-white hover:text-[#B1A1C5]"
-                />
+                <button className="bg-[#6c47ff] text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                  Sign Up
+                </button>
               </SignUpButton>
-                </SignInButton>
-                </SignedOut>
+            </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
